@@ -18,18 +18,24 @@ Route::get('/', function () {
 });
 
 
-// Route::get('/post/{id}/{name}', function($id, $name){
-//     return "Hi i am contact". $id . "" . $name;
+ Route::get('/post/{id}/{name}', function($id, $name){
+     return "Hi i am contact". $id . "" . $name;
 
     
-// }
-// );
+ }
+ );
 
 
-// Route::get('/insert', function(){
+ Route::get('/insert', function(){
 
-//     DB::insert('insert into posts(title, content) values(?,?)', ['PHP withn laravel', 'Laravel is bae']);
+     DB::insert('insert into posts(title, content) values(?,?)', ['PHP withn laravel', 'Laravel is bae']);
 
-// });  
+ });  
 
+ Route::get('/read', function(){
+    $results = DB::select('select * from posts where id = ?', [1]);
+
+   return var_dump($results);
+
+ });
  
