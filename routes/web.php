@@ -94,4 +94,6 @@ Route::get('/look', function(){
 
 
 
-
+hnkdwd.
+snd,adnw
+smdlasd.skdm.s
