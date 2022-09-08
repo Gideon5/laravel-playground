@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use  App\Models\Post;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -52,9 +54,22 @@ Route::get('/', function () {
  });
  
 
- Route::get('/delete', function(){
+Route::get('/delete', function(){
  
     $deleted = DB::delete('delete from posts where id = ? ', [1]);
     return $deleted;
 
  });
+
+
+
+Route::get('/title', function(){
+    $posts = Post::all(); 
+
+    foreach($posts as $post){
+        return $post->title;
+    }
+
+    
+ });
+
