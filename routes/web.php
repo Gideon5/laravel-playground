@@ -30,7 +30,7 @@ Route::get('/', function () {
 
  Route::get('/insert', function(){
 
-     DB::insert('insert into posts(title, content) values(?,?)', ['PHP withn laravel', 'Laravel is bae']);
+     DB::insert('insert into posts(title, content) values(?,?)', ['New laravel', 'Laravel cest bon']);
 
  });  
 
@@ -84,16 +84,14 @@ Route::get('/look', function(){
     
  });
 
- 
-Route::get('/findwhere', function(){
-    $new = Post::where('id',2)->orderBy('id','2')->get(); 
+ Route::get('/findwhere', function(){
 
-    
-        return $new;
-   
+   $new = Post::where('id',2)->orderBy('id','desc')->take(1)->get();
 
-    
- });
+   return $new;
+
+});
+
 
 
 
