@@ -64,7 +64,7 @@ Route::get('/delete', function(){
 
 
 Route::get('/title', function(){
-    $posts = Post::all(); 
+    $posts = Post::find (); 
 
     foreach($posts as $post){
         return $post->title;
@@ -72,4 +72,28 @@ Route::get('/title', function(){
 
     
  });
+
+ 
+Route::get('/look', function(){
+    $post = Post::find(2); 
+
+   
+        return $post->title;
+   
+
+    
+ });
+
+ 
+Route::get('/findwhere', function(){
+    $new = Post::where('id',2)->orderBy('id','2')->get(); 
+
+    
+        return $new;
+   
+
+    
+ });
+
+
 
