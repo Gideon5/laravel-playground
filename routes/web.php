@@ -86,7 +86,7 @@ Route::get('/look', function(){
 
  Route::get('/findwhere', function(){
 
-   $new = Post::where('id',2)->orderBy('id','desc')->take(1)->get();
+   $new = Post::where('id',3)->orderBy('id','desc')->take(1)->get();
 
    return $new;
 
