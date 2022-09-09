@@ -126,7 +126,14 @@ Route::get('/basicinsert2', function(){
 Route::get('/fill', function(){
 
     Post::create(['title'=>'the create method',
-         'content'=>'cocntent with created here added content']);
+         'content'=>'content with created here added content']);
+});
+
+
+Route::get('/update', function(){
+
+    Post::where('id',2)->update(['title'=>'update eloquent', 'content'=> 'not rocket sicence']);
+     
 });
     
 
