@@ -61,7 +61,7 @@ Route::get('/delete', function(){
 
  });
 
-
+// ELOQUENT
 
 Route::get('/title', function(){
     $posts = Post::find (); 
@@ -93,10 +93,41 @@ Route::get('/look', function(){
 });
 
 
-sdsdasdsa
-sdadsdsd
-sdk;m/m/,s,<md>
-<a href="ksmd.smad
+Route::get('/findmore',function(){
 
-sdm"></a>
+    $posts = Post::findOrFail(2);
+
+    return $posts;
+
+});
+
+
+Route::get('/basicinsert', function(){
+
+    $post = new Post;
+
+    $post->title = 'New title enetered';
+    $post->content = 'New content saved' ;
+
+    $post->save();
+});
+
+
+Route::get('/basicinsert2', function(){
+
+    $post = Post::find(4);
+
+    $post->title = 'New title enetered 3';
+    $post->content = 'New content saved 3' ;
+
+    $post->save();
+});
+
+Route::get('/fill', function(){
+
+    Post::create(['title'=>'the create method',
+         'content'=>'cocntent with created here added content']);
+});
+    
+
 
