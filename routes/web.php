@@ -135,6 +135,22 @@ Route::get('/update', function(){
     Post::where('id',2)->update(['title'=>'update eloquent', 'content'=> 'not rocket sicence']);
      
 });
+
+
+Route::get('/del',function(){
+
+    $post = Post::find(3);
+
+    $post->delete();
+
+});
+
+Route::get('/del2', function(){
+    Post::destroy([4,5]);
+    
+
+
+});
     
 
 
