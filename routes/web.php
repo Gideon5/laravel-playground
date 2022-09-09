@@ -147,7 +147,9 @@ Route::get('/del',function(){
 
 Route::get('/del2', function(){
     Post::destroy([4,5]);
-    
+
+    Post::where('id', 2)->delete();
+
 
 
 });
