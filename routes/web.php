@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use  App\Models\Post;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 
 /*
@@ -152,6 +153,10 @@ Route::get('/del2', function(){
 
 
 
+});
+
+Route::get('/softdel', function(){
+     
 });
     
 
