@@ -155,9 +155,18 @@ Route::get('/del2', function(){
 
 });
 
-Route::get('/softdel', function(){
-     
+Route::get('/readsoftdel', function(){
+
+    // $post ->Post::find(5);
+
+    // return $post;
+
+
+   $post = Post::withTrashed()->where('id',5)->restore();
+    
 });
+
+
     
 
 
