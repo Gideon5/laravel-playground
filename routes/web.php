@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use  App\Models\Post;
+use  App\Models\User;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 
@@ -164,6 +165,11 @@ Route::get('/readsoftdel', function(){
 
    $post = Post::withTrashed()->where('id',5)->restore();
     
+});
+
+Route::get('/user/post/{id}', function($id){
+   return User::find($id)->post->title;
+
 });
 
 
