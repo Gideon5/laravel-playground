@@ -198,11 +198,13 @@ Route::get('/posts', function(){
 
 Route::get('/user/{id}/role', function($id){
 
-    $user = User::find($id);
+    $user = User::find($id)->roles()->get();
 
-    foreach($user->roles as $role){
-        return $role->name;
-    }
+    return $user;
+
+    // foreach($user->roles as $role){
+    //     return $role->name;
+    // }
 
 });
 
