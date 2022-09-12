@@ -193,6 +193,19 @@ Route::get('/posts', function(){
 
 });
 
+
+///many to many
+
+Route::get('/user/{id}/role', function($id){
+
+    $user = User::find($id);
+
+    foreach($user->roles as $role){
+        return $role->name;
+    }
+
+});
+
     
 
 
