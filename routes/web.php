@@ -22,12 +22,12 @@ Route::get('/', function () {
 });
 
 
- Route::get('/post/{id}/{name}', function($id, $name){
-     return "Hi i am contact". $id . "" . $name;
+//  Route::get('/post/{id}/{name}', function($id, $name){
+//      return "Hi i am contact". $id . "" . $name;
 
     
- }
- );
+//  }
+//  );
 
 
  Route::get('/insert', function(){
@@ -167,11 +167,31 @@ Route::get('/readsoftdel', function(){
     
 });
 
+
+//One to one
 Route::get('/user/post/{id}', function($id){
    return User::find($id)->post->title;
 
 });
 
+Route::get('/post/{id}/user', function($id){
+
+    return Post::find($id)->user->name;
+});
+
+//One To Many
+
+Route::get('/posts', function(){
+
+    $user = User::find(1);
+
+    foreach($user->posts as $post){
+
+       echo $post->title ."<br>";
+
+    }
+
+});
 
     
 
