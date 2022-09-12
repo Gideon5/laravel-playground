@@ -210,6 +210,18 @@ Route::get('/user/{id}/role', function($id){
 
 });
 
+
+// ACCESSING THE PIVOT TABLE
+Route::get('/user/pivot', function(){
+    $user = User::find(1);
+
+    foreach($user->roles as $role){
+
+        echo $role->pivot->created_at;
+    }
+
+});
+
     
 
 
