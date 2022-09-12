@@ -217,7 +217,7 @@ Route::get('/user/pivot', function(){
 
     foreach($user->roles as $role){
 
-        echo $role->pivot->created_at;
+        echo $role->pivot;
     }
 
 });
