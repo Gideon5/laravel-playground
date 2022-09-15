@@ -221,7 +221,7 @@ Route::get('/user/pivot', function(){
     }
 
 });
-hello worldoj;kjk
+hello worldoj;kjksddafasdas
 
     
 
