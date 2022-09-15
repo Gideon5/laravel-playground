@@ -221,6 +221,7 @@ Route::get('/user/pivot', function(){
     }
 
 });
+hello world
 
     
 
