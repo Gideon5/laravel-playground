@@ -221,7 +221,13 @@ Route::get('/user/pivot', function(){
     }
 
 });
-hello worldoj;kjksddafasdassdaasdasfasf
+
+Route::get('/user/country',function(){
+
+    
+
+});
+
 
     
 
