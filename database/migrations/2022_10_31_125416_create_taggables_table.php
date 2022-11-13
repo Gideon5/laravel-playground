@@ -4,22 +4,21 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateCountriesTable extends Migration
+class CreateTaggablesTable extends Migration
 {
     /**
      * Run the migrations.
      *
-     * @return void3.3
-     * 2
-     
+     * @return void
      */
     public function up()
     {
-        Schema::create('countries', function (Blueprint $table) {
+        Schema::create('taggables', function (Blueprint $table) {
             $table->id();
+            $table->integer('tag_id');
+            $table->integer('taggable_id');
+            $table->string('taggable_type');
             $table->timestamps();
-            $table->string('name');
-
         });
     }
 
@@ -30,6 +29,6 @@ class CreateCountriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('countries');
+        Schema::dropIfExists('taggables');
     }
 }

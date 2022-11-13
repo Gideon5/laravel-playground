@@ -61,4 +61,15 @@ class User extends Authenticatable
 // for customize table names and columsn
         // return $this->belongsToMany('App\Models\Role','user_roles','user_id', 'role_id');
     }
+
+
+    public function photos (){
+        return $this->morphMany('App\Models\Photo', 'imageable');
+    }
+
+    public function address(){
+
+        return $this->hasOne('App\Models\Address');
+    }
+    
 }

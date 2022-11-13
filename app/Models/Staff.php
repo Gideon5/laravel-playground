@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Country extends Model
+class Staff extends Model
 {
     use HasFactory;
 
-    public function posts(){
-        
-        return $this->hasManyThrough('App\Models\Post', 'App\Models\User'); 
+    public function photos(){
+
+        return $this->morphMany('App\Models\Photo','imageable');
     }
+
 
 }

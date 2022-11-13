@@ -5,13 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Country extends Model
+class Video extends Model
 {
     use HasFactory;
 
-    public function posts(){
+    public function tags(){
         
-        return $this->hasManyThrough('App\Models\Post', 'App\Models\User'); 
-    }
 
+        return $this->morphToMany('App\Models\Tag', 'taggable');
+
+    }
 }
